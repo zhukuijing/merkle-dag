@@ -181,7 +181,6 @@ func sliceDirectory(node Dir, store KVStore, h hash.Hash) *Object {
 }
 
 func Add(store KVStore, node Node, h hash.Hash) []byte {
-	// 将分片写入KVStore，并返回Merkle Root
 	if node.Type() == FILE {
 		file := node.(File)
 		fileSlice := sliceFile(file, store, h)
